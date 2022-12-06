@@ -1,0 +1,16 @@
+.form-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    background-color: rgb(112, 42, 162);
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+}
+
+.center-div{
+    display: flex;
+    justify-content: center;
+}
+

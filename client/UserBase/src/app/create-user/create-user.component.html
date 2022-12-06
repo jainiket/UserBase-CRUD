@@ -1,0 +1,47 @@
+<div *ngIf="isCreated">
+    <div class="alert alert-success" role="alert">User Created Successfully ....</div>
+</div>
+<div *ngIf="isDuplicate">
+    <div class="alert alert-danger" role="alert">!! User Already Exist !!</div>
+</div>
+<div class="center-div">
+    <div class="create-user-form">
+        <form [formGroup]="createUserForm" (ngSubmit)="submitUserForm()">
+            <h3 class="text-warning">Create User</h3>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3" style="width:400px;">
+                        <label for="exampleInputEmail1" class="form-label text-white">First Name</label>
+                        <input type="text" class="form-control" id="firstName" aria-describedby="FirstName"
+                            formControlName="firstName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label text-white">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" aria-describedby="LastName"
+                            formControlName="lastName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label text-white">Email ID</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="Email"
+                            formControlName="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label text-white">Phone Number </label>
+                        <input type="text" class="form-control" id="phoneNumber" aria-describedby="Phone Number"
+                            formControlName="phoneNumber">
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="exampleInputEmail1" class="form-label text-white">Profile Pic </label>
+                    <img [src]="imageUrl" class="profile-area" accept="image/*">
+                    <input type="file" class="form-control" id="profileImg" aria-describedby="Profile Image"
+                        formControlName="profileImg" (change)="previewImage($event)">
+                </div>
+            </div>
+            <div style="display: flex;justify-content:center;">
+                <button type="submit" class="btn btn-primary" [disabled]="createUserForm.status!='VALID'">ADD
+                    USER</button>
+                </div>
+        </form>
+    </div>
+</div>

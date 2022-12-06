@@ -1,0 +1,39 @@
+<div *ngIf="isCreated">
+    <div class="alert alert-primary" role="alert">User Updated Successfully ....</div>
+</div>
+<div class="center-div">
+    <div class="create-user-form">
+        <form [formGroup]="updateUserForm" (ngSubmit)="submitUserForm()">
+            <h3 class="text-warning">Update User</h3>
+            <div class="row">
+                <div class="col">
+                    <div class="mb-3" style="width:400px;">
+                        <label for="exampleInputEmail1" class="form-label text-white">First Name</label>
+                        <input type="text" class="form-control" id="firstName" aria-describedby="FirstName" formControlName="firstName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label text-white">Last Name</label>
+                        <input type="text" class="form-control" id="lastName" aria-describedby="LastName" formControlName="lastName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label text-white">Email ID</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="Email" formControlName="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label text-white">Phone Number </label>
+                        <input type="text" class="form-control" id="phoneNumber" aria-describedby="Phone Number" formControlName="phoneNumber">
+                    </div>
+                </div>
+                <div class="col">
+                    <label for="exampleInputEmail1" class="form-label text-white">Profile Pic </label>
+                    <img [src]="imageUrl" class="profile-area">
+                    <input type="file" class="form-control" id="profileImg" aria-describedby="Profile Image" formControlName="profileImg" (change)="previewImage($event)">
+                </div>
+            </div>
+            <div style="display: flex;justify-content:center;">
+                <button type="submit" class="btn btn-primary" [disabled]="updateUserForm.status!='VALID'">UPDATE USER</button>
+            </div>
+        </form>
+    </div>
+
+</div>

@@ -1,0 +1,31 @@
+<div style="display: flex; justify-content: center;background-color: rgb(65, 0, 126);" *ngIf="userData.length>0">
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col" class="text-warning">Unique ID</th>
+                    <th scope="col" class="text-warning">Full Name</th>
+                    <th scope="col" class="text-warning">Email</th>
+                    <th scope="col" class="text-warning">Phone Number</th>
+                    <th scope="col" class="text-warning">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let user of userData">
+                    <td class="text-white">{{user.userId}}</td>
+                    <td class="text-white">{{user.firstName+" "+user.lastName}}</td>
+                    <td class="text-white">{{user.email}}</td>
+                    <td class="text-white">{{user.phoneNumber}}</td>
+                    <td class="text-white"><span><button class="btn btn-primary" [routerLink]="['/updateUser',user.userId]">Update</button></span>&nbsp;<span><button
+                                class="btn btn-danger" (click)="removeUser(user.userId)">Delete</button></span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div *ngIf="userData.length==0">
+    <div class="alert alert-primary" role="alert">
+        <h4 class="alert-heading">No User Found</h4>
+    </div>
+</div>

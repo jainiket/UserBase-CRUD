@@ -1,0 +1,25 @@
+.create-user-form{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin-top: 100px;
+    background-color: rgb(112, 42, 162);
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.center-div{
+    display: flex;
+    justify-content: center;
+}
+
+.profile-area{
+    background-color: white;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 8px;
+    margin-left:40px;
+    border-radius: 50%;
+}
