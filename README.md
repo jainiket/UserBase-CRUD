@@ -1,5 +1,10 @@
 # UserBase-CRUD
 
+MongoDB Setup ==>
+Step 1. Install MongoDB
+Step 2. Create DataBase - "UserDB"
+Step 3. Create Collection - "User"
+
 Server(Node) setup ==>
 Step 1. Using cmd, go inside folder UserBase-CRUD
 Step 2. run command -> npm install (it will install all dependencies)
